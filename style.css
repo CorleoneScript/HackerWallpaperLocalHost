@@ -1,0 +1,249 @@
+/* Add these new styles at the beginning of your CSS file */
+.agency-logos {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 20px;
+}
+
+.agency-logo {
+    width: 80px;
+    height: 80px;
+    opacity: 0.7;
+    filter: brightness(0.8) sepia(1) hue-rotate(95deg);
+    animation: pulse 2s infinite;
+}
+
+/* Base Styles */
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/800px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png') center/contain no-repeat fixed,
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/National_Security_Agency.svg/800px-National_Security_Agency.svg.png') center/contain no-repeat fixed;
+    background-blend-mode: overlay;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: 
+        radial-gradient(circle, #001f1f, #000),
+        radial-gradient(rgba(0, 255, 0, 0.1) 2px, transparent 2px),
+        linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 50px 50px, 50px 50px, 50px 50px;
+    background-blend-mode: normal, overlay, overlay, overlay;
+}
+
+/* Layout */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Panels */
+.side-panel {
+    background: rgba(0, 40, 0, 0.9);
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.central-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Globe Container */
+#globe-container {
+    height: 400px;
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    background: rgba(0, 40, 0, 0.9);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Terminal */
+#terminal {
+    flex-grow: 1;
+    background: rgba(0, 40, 0, 0.9);
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    padding: 15px;
+    overflow-y: auto;
+    font-size: 0.9em;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Panel Elements */
+.panel-title {
+    font-size: 0.9em;
+    color: #0f0;
+    border-bottom: 1px solid #0f0;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.stats-box {
+    background: rgba(0, 60, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+/* Log Entries */
+.log-entry {
+    margin: 8px 0;
+    animation: fadeIn 0.5s;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 8px;
+    border-radius: 5px;
+    background: rgba(0, 40, 0, 0.3);
+    border: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.log-entry:hover {
+    background: rgba(0, 60, 0, 0.5);
+    border-color: rgba(0, 255, 0, 0.3);
+}
+
+/* Status Indicators */
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 5px currentColor;
+}
+
+.status-active {
+    background: #0f0;
+    color: #0f0;
+}
+
+.status-warning {
+    background: #ff0;
+    color: #ff0;
+}
+
+.status-danger {
+    background: #f00;
+    color: #f00;
+}
+
+/* Buttons */
+.tool-button {
+    background: rgba(0, 80, 0, 0.8);
+    border: 1px solid #0f0;
+    color: #0f0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.tool-button:hover {
+    background: rgba(0, 100, 0, 1);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.tool-button:active {
+    transform: translateY(1px);
+}
+
+/* Scan Line Effect */
+.scan-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 0, 0.2);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Text Colors */
+.timestamp { color: #00ff00; }
+.hack-type { 
+    color: #ff0000; 
+    font-weight: bold;
+    background: rgba(255, 0, 0, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.target { color: #ffff00; }
+.location { color: #00ffff; }
+.password { 
+    color: #ff00ff;
+    background: rgba(255, 0, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Animations */
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 20, 0, 0.9);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0f0;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0f0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+  

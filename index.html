@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Intelligence Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/globe.gl/2.32.1/globe.gl.min.js"></script>
+    <style>
+        body {
+            background: radial-gradient(circle, #000000, #001f1f),
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/800px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png') center/20% no-repeat fixed;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+            animation: glowEffect 5s infinite;
+            z-index: 0;
+        }
+
+        @keyframes glowEffect {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .agency-logo {
+            width: 100px;
+            height: 100px;
+            animation: rotate-glitch 5s linear infinite;
+        }
+
+        @keyframes rotate-glitch {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg) scale(1.1); }
+        }
+
+        #terminal::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: #0f0;
+            animation: blink-cursor 1s infinite;
+        }
+
+        @keyframes blink-cursor {
+            50% { opacity: 0; }
+        }
+
+        #terminal {
+            flex-grow: 1;
+            background: rgba(0, 20, 0, 0.9);
+            border: 2px solid #0f0;
+            border-radius: 10px;
+            padding: 15px;
+            overflow-y: auto;
+            font-size: 1em;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            color: #0f0;
+            line-height: 1.5;
+            font-family: 'Courier New', monospace;
+            max-height: 80vh;
+        }
+
+        .log-entry {
+            margin: 8px 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .hack-type {
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        .target {
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="agency-logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/300px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png" alt="FBI Logo" class="agency-logo">
+    </div>
+    <div id="terminal"></div>
+    <div class="scan-line"></div>
+    <div class="main-container">
+        <div class="side-panel">
+            <div class="panel-title">SYSTEM STATUS</div>
+            <div class="stats-box">
+                <div><span class="status-indicator status-active"></span>Active Threats: <span id="active-threats">0</span></div>
+                <div><span class="status-indicator status-warning"></span>Total Attempts: <span id="total-attempts">0</span></div>
+            </div>
+            <div class="panel-title">TOOLS</div>
+            <button class="tool-button">Password Cracker</button>
+            <button class="tool-button">Network Scanner</button>
+            <button class="tool-button">Vulnerability Analysis</button>
+        </div>
+        <div class="central-panel">
+            <div id="globe-container"></div>
+            <div id="terminal"></div>
+        </div>
+        <div class="side-panel">
+            <div class="panel-title">TOP TARGETS</div>
+            <div class="stats-box" id="top-locations">Loading...</div>
+            <div class="panel-title">ACTIVE EXPLOITS</div>
+            <div class="stats-box" id="active-exploits"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

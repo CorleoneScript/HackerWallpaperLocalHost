@@ -1,0 +1,83 @@
+body {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460);
+    color: #fff;
+    min-height: 100vh;
+    animation: gradientShift 15s ease infinite;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(247, 37, 133, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 20% 20%, rgba(114, 9, 183, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(76, 201, 240, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    animation: pulseBackground 8s ease-in-out infinite;
+}
+
+.side-panel {
+    background: linear-gradient(45deg, #f72585, #7209b7);
+    color: #fff;
+    border: 1px solid rgba(247, 37, 133, 0.3);
+    box-shadow: 0 0 15px rgba(247, 37, 133, 0.5);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.side-panel:hover {
+    box-shadow: 0 0 25px rgba(247, 37, 133, 0.7);
+}
+
+.panel-title {
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.log-entry {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-out;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.log-entry:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    border-color: rgba(247, 37, 133, 0.5);
+}
+
+.log-entry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f72585);
+    animation: scanline 2s linear infinite;
+}
+
+.hack-type {
+    color: #f72585;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(247, 37, 133, 0.5);
+}
+
+.target {
+    color: #4cc9f0;
+} 
