@@ -1,6 +1,3 @@
-Here’s an upgraded version with extra polish to captivate potential contributors and distributors:
-
----
 
 # HackerWallpaperLocalHost 🚀  
 ### **Unleashing the Ultimate Hacker-Themed Dashboard**
