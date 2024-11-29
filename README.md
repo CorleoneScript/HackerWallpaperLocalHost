@@ -57,7 +57,7 @@ Your skills and ideas could make a world of difference! Here are some ways to co
 
 1. **Clone the Repository:**  
    ```bash
-   git clone https://github.com/YourUsername/HackerWallpaperLocalHost.git  
+   git clone https://github.com/CorleoneScript/HackerWallpaperLocalHost.git  
    cd HackerWallpaperLocalHost  
    ```  
 
