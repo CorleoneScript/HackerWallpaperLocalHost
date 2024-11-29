@@ -86,6 +86,4 @@ Thank you for checking out this project. With your help, **HackerWallpaperLocalH
 
 Ready to dive in? Join us on GitHub and let’s make something amazing together! 🔥  
 
----  
 
-How does that sound? This version is aimed at being both engaging and professional, while clearly outlining the project’s needs.
